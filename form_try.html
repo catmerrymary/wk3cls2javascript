@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Changing Properties of an Element</title>
+</head>
+<body>
+    <p>Please enter your name</p>
+    <input type="text" id="username">
+    <button id="save-user-name">SAVE</button>
+    <p id="welcome-message"></p>
+
+<script>
+    let saveButton = document.querySelector('#save-user-name')
+    let nameInput = document.querySelector('#username')
+    let welcomeMessage = document.querySelector('#welcome-message')
+
+    saveButton.addEventListener('click', function() {
+        let name = nameInput.value
+        welcomeMessage.innerHTML =`Welcome, ${name}!`
+    })
+</script>
+
+</body>
+</html>

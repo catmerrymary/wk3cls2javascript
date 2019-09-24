@@ -1,0 +1,30 @@
+body {
+
+    background-color: lightblue;
+    font-size: 16px;
+}
+h1 {
+    text-align: center;
+}
+button {
+
+    border: 2pt solid #333333;
+    background-color: lavender;
+
+}
+.tab-content {
+    border: 2pt solid #333333;
+    max-width: 200px;
+
+}
+button:hover {
+    background-color: pink;
+}
+
+.tab-button.active {
+    background-color: lightgreen;
+}
+ #box {
+     max-width: 250px;
+     border: 2pt solid #333333;
+ }

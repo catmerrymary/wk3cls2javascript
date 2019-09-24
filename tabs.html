@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabbed Content</title>
+    <link rel="stylesheet" href="styletod.css" type="text/css">
+
+</head>
+<body>
+<h1>Favorite Foods</h1>
+<div id="box">
+<div id="tabs">
+    <button data-content-id="lobster" class="tab-button">lobster</button>  <!--//data content id is not a standard attribute so you use script to link the tab-content to id-->
+    <button data-content-id="cake" class="tab-button">cake</button>
+    <button data-content-id="fresh-bread" class="tab-button">fresh bread</button>
+</div>
+
+<div id="lobster" class="tab-content">Lobster is awesome!</div>
+<div id="cake" class="tab-content">Cake is sweet.</div>
+<div id="fresh-bread" class="tab-content">Homemade bread is great</div>
+</div>
+
+<script>
+    let buttons = document.querySelectorAll('.tab-button')
+    let tabContents = document.querySelectorAll('.tab-content')
+
+    tabContents.forEach(function(divEl) {
+            divEl.style.display = 'none'
+        })
+
+
+        buttons.forEach(function (buttonEl) {
+
+            buttonEl.addEventListener('click', function () {
+
+                tabContents.forEach(function (divEl) {
+                    divEl.style.display = 'none'
+                })
+
+                let contentId = this.getAttribute('data-content-id') //this is the button clicked
+               /* console.log(contentId)*/
+                let tabContent = document.querySelector('#' + contentId)
+                tabContent.style.display = 'block'
+
+                buttons.forEach(function(button) {
+                    button.classList.remove('active')
+                })
+                    this.classList.add('active')
+                })
+            })
+
+
+    tabContents[0].style.display ='block' //show first tab
+
+
+</script>
+</body>
+</html>
+<!--Look at slide 80!!-->

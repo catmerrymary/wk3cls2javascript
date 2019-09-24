@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz</title>
+</head>
+<body>
+        <h1>Let's get organized!</h1>
+        <p>Enter each to do item into the box, clicking the add button after each entry.</p>
+        <input id="new-task" type="text" placeholder="Add tasks here" /> <!--input indicates user must provide info-->
+
+        <button id="add">Add</button><!--This button adds each input typed in-->
+
+        <button id="clear">Clear List</button><!--This button clears the list-->
+
+        <ul id="task-list"></ul><!--Each entry the user adds will be put into an unorderd list-->
+
+    
+<script>
+
+        let inputElement = document.querySelector("#new-task");/*use input tag id to target the items user provides*/
+        let addButtonElement = document.querySelector('#add');/*We're using the id to select the first button*/
+        let clearButtonElement = document.querySelector('#clear');/*This selects the clear button by Id*/
+        let taskListElement = document.querySelector('#task-list');/*This adds to our list of tasks by identifying the ul element*/
+        let itemCount = 0;/*This sets a counter to 0*/
+        let maxListItemCount = 10;/*The counter is used to determine how many list items the user has added and limit the size of the list to ten items*/
+        
+        addButtonElement.addEventListener('click', function(){
+            if (itemCount < maxListItemCount) {
+                let inputText = inputElement.value;
+                if (inputText.length < 50) {
+                    let newListItemElement = document.createElement('li');
+                    newListItemElement.innerHTML = inputText;
+                    taskListElement.appendChild(newListItemElement);
+                    inputElement.value = '';
+                    itemCount++
+                } else
+                    alert(`${inputText} can't be longer than 49 letters.`)
+            } else {
+                alert(`${maxListItemCount} things only.`)
+            }
+        });
+        clearButtonElement.addEventListener('click', function(){
+            if (confirm('Delete all items, are you sure?')) {
+                taskListElement.innerHTML = '';
+                itemCount = 0;
+                inputElement.value = ''
+            }
+        });
+        
+  
+</script>
+
+</body>
+</html>

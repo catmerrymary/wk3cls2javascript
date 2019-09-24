@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style>
+        canvas {
+            border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" height="200" width ="300"></canvas>
+<script>
+    let canvas =document.querySelector("#canvas")
+    let context = canvas.getContext("2d")
+    context.fillStyle ="red"
+    context.fillRect(20,20,100,100)
+
+    context.strokeStyle = "purple"
+    context.strokeRect(150,150,30,30)
+
+    context.fillStyle = "green"
+    context.fillRect(200,40,30,80)
+
+    context.arc(100, 200, 50, 0, 2 * Math.PI);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz</title>
+</head>
+<body>
+
+        <!-- Create a page with 
+        An input element 
+        A button with the text Add
+        An empty unordered list -->
+
+        <input id="new-task" type="text">
+
+        <button id="add">Add
+        </button>
+
+        <button id="clear">Clear List</button>
+
+        <ul id="task-list"></ul>
+
+    
+<script>
+        // When the user types in the input and clicks the button, use whatever 
+        // text is in the input to make a new list item, and add it to the list
+        // Clear the input (Hint: you can read and set the input’s value ) 
+        let inputElement = document.querySelector("#new-task")
+        let addButtonElement = document.querySelector('#add')
+        let clearButtonElement = document.querySelector('#clear')
+        let taskListElement = document.querySelector('#task-list')
+        let itemCount = 0
+        let maxListItemCount = 5
+        
+        addButtonElement.addEventListener('click', function(){
+            if (itemCount < maxListItemCount) {
+                let inputText = inputElement.value
+                if (inputText.length > 0) {
+                    let newListItemElement = document.createElement('li')
+                    newListItemElement.innerHTML = inputText
+                    taskListElement.appendChild(newListItemElement)
+                    inputElement.value = ''
+                    itemCount++
+                }
+            } else {
+                alert(`${maxListItemCount} things only.`)
+            }
+        } )
+        clearButtonElement.addEventListener('click', function(){
+            if (confirm('Delete all items, are you sure?')) {
+                taskListElement.innerHTML = ''
+                itemCount = 0
+                inputElement.value = ''
+            }
+        })
+        
+  
+</script>
+
+</body>
+</html>
