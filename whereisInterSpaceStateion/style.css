@@ -1,0 +1,11 @@
+#brdr {
+    margin: 50px;
+    border: 2px solid blue;
+    background-color: #d9f3ff;
+}
+
+#iss-map {
+    height: 400px;
+    width: 1000px;
+    margin: 50px;
+      }

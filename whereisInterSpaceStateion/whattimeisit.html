@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What Time Is It</title>
+</head>
+<body>
+<h1>Expect</h1>
+<p id = "time"></p>
+
+<script>
+    console.log("Hello1")
+    let p = document.querySelector('#time')
+    setInterval(()  =>{
+        console.log("hello")
+        p.innerHTML = new Date()
+    },1000)
+
+</script>
+</body>
+</html>
